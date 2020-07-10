@@ -13,7 +13,7 @@ export class FireauthService {
 
   login(email:string, password:string){
     return new Promise((resolve, rejected) =>{
-      auth().signInWithEmailAndPassword(email, password).then(user => {
+      this.AFauth.signInWithEmailAndPassword(email, password).then(user => {
         resolve(user);
       }).catch(err => rejected(err));
     });
@@ -24,9 +24,9 @@ export class FireauthService {
       message: "Cerrando Sesión..."
     });
     await loading.present(); 
-    auth().signOut().then(() => {
+    this.AFauth.signOut().then(() => {
       loading.dismiss();  
-      this.router.navigate(['/bienvenida']);
+      this.router.navigate(['/home']);
     }).catch( err => {
       loading.dismiss();  
       this.alerta("¡Ho noo!", "Ocurrió un error al cerrar sesión")

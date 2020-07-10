@@ -1,12 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Bienvenido</ion-title>
-    <ion-buttons (click)="cerrarCesion()" slot="end">
+    <ion-buttons (click)="alertacesion()" slot="end">
       Cerrar 
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="bg-class">
-{{datos}}
+
+<ion-card>
+  <ion-card-header>    
+    <ion-card-title>{{aviso}}</ion-card-title>
+  </ion-card-header>
+
+</ion-card>
 </ion-content>

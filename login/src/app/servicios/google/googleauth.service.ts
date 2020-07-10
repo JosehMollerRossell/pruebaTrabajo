@@ -15,12 +15,10 @@ export class GoogleauthService {
               public loadingController: LoadingController) { }
     datos;
   logeoConGooogle(){
-   return this.google.login({}).then(res =>{
+   return this.google.login({}).then((res) =>{
       const data = res;      
       this.datos = res;
-      return auth().signInWithCredential(auth.GoogleAuthProvider.credential(res.idToken)).then(success => {
-        console.log("Firebase success: " + JSON.stringify(success));
-      } ).catch( error => this.alerta("¡Ho noo!", JSON.stringify(error)));     
+      return this.AFauth.signInWithPopup(auth.GoogleAuthProvider.credential(data.idToken, data.accesToken))  
     }).catch(err => this.alerta("¡Ho!", err) );
   }
 
@@ -29,7 +27,7 @@ export class GoogleauthService {
       message: "Cerrando Sesión..."
     });
     await loading.present(); 
-    auth().signOut().then(()=>{
+    this.AFauth.signOut().then(()=>{
       this.router.navigate(['/home']);
       loading.dismiss();  
     }).catch( err => {

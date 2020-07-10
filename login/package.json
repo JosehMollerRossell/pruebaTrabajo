@@ -66,10 +66,7 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "prueba.moller.rossell",
-        "WEB_APPLICATION_CLIENT_ID": "1092215752880-9ckp6nokb99u2ej50oeiqctle5v5dud6.apps.googleusercontent.com"
-      },
+      "cordova-plugin-googleplus": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},

@@ -1,7 +1,0 @@
-{
-  "name": "logeo",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
