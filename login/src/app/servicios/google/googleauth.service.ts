@@ -19,7 +19,7 @@ export class GoogleauthService {
       const data = res;      
       this.datos = res;
       return this.AFauth.signInWithPopup(auth.GoogleAuthProvider.credential(data.idToken, data.accesToken))  
-    }).catch(err => this.alerta("¡Ho!", err) );
+    }).catch(err => console.log(err) );
   }
 
   async deslogeo(){
