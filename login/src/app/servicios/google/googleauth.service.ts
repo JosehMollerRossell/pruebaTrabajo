@@ -22,6 +22,7 @@ export class GoogleauthService {
     }).catch(err => console.log(err) );
   }
 
+  
   async deslogeo(){
     const loading = await this.loadingController.create({
       message: "Cerrando Sesión..."
